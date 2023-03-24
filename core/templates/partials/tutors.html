@@ -1,0 +1,6 @@
+<select name="course" id="" class="custom-select mb-4">
+  <option selected>Choose your tutors</option>
+  {% for tutor in tutors %}
+  <option value="{{ tutor.pk }}">{{ tutor.name }}</option>
+  {% endfor %}
+</select>

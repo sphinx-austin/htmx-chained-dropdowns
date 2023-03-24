@@ -1,6 +1,20 @@
-<select name="course" id="" class="custom-select mb-4">
-  <option selected>Open this select menu</option>
+<select
+  id=""
+  class="custom-select mb-4"
+  name="module"
+  hx-get="{% url 'tutors' %}"
+  hx-trigger="change"
+  hx-target="#tutors"
+>
+  <option selected>Choose you module</option>
   {% for module in modules %}
   <option value="{{ module.pk }}">{{ module.name }}</option>
   {% endfor %}
 </select>
+
+<!--logic for tutors -->
+{% if is_htmx %}
+<div id="tutors" class="my-4" hx-swap-oob="true">
+  {% include 'partials/tutors.html' %}
+</div>
+{% endif %}

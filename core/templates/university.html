@@ -12,6 +12,8 @@
   <option value="{{ course.pk }}">{{ course.name }}</option>
   {% endfor %}
 </select>
-
-<div id="modules">{% include 'partials/modules.html' %}</div>
+<!-- for modules -->
+<div id="modules" class="my-4">{% include 'partials/modules.html' %}</div>
+<!-- for tutors -->
+<div id="tutors" class="my-4">{% include 'partials/tutors.html' %}</div>
 {% endblock %}
