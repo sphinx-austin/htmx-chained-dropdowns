@@ -1,5 +1,11 @@
-{% extends 'base.html' %} {% block content %}
-<select
+{% extends 'base.html' %}
+<!-- load widget tweaks -->
+{% load widget_tweaks %}
+
+<!-- some old code here -->
+
+{% block content %}
+<!-- <select
   name="course"
   id=""
   class="custom-select mb-4"
@@ -11,7 +17,10 @@
   {% for course in courses %}
   <option value="{{ course.pk }}">{{ course.name }}</option>
   {% endfor %}
-</select>
+</select> -->
+{{ form.course.label_tag }}
+<!-- render form field with custiom bootstrap styling -->
+{% render_field form.course class='custom-select mb-4' autocomplete="off" %}
 
 <div id="modules">{% include 'partials/modules.html' %}</div>
 {% endblock %}
